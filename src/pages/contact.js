@@ -15,11 +15,6 @@ const columns = [
     render: (text) => <a href="hi">{text}</a>,
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
-  },
-  {
     title: "Address",
     dataIndex: "address",
     key: "address",
