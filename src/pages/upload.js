@@ -103,6 +103,7 @@ const UploadImage = () => {
     console.log("values:", values);
     axios
       .post(`/cards/${uploadResponse.fileId}/save-field`, {
+        access_id: localStorage.getItem("access_id"),
         ...values,
       })
       .then(() => {

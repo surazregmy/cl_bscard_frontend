@@ -1,5 +1,9 @@
-import { UploadOutlined, UserOutlined } from "@ant-design/icons";
-import { Layout, Menu, theme } from "antd";
+import {
+  UploadOutlined,
+  UserOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
+import { Button, Layout, Menu, theme } from "antd";
 import React from "react";
 
 import { Outlet, Link } from "react-router-dom";
@@ -8,16 +12,18 @@ const items1 = ["Comp 264- Group 3"].map((key) => ({
   key,
   label: `${key}`,
 }));
-const menu = ["Contacts", "Upload New Business Card"];
-const link = ["", "upload"];
-const items2 = [UserOutlined, UploadOutlined].map((icon, index) => {
-  const key = String(index + 1);
-  return {
-    key: `sub${key}`,
-    icon: React.createElement(icon),
-    label: <Link to={`/${link[index]}`}>{menu[index]}</Link>,
-  };
-});
+const menu = ["Contacts", "Upload New Business Card", "Logout"];
+const link = ["", "upload", "logout"];
+const items2 = [UserOutlined, UploadOutlined, LogoutOutlined].map(
+  (icon, index) => {
+    const key = String(index + 1);
+    return {
+      key: `sub${key}`,
+      icon: React.createElement(icon),
+      label: <Link to={`/${link[index]}`}>{menu[index]}</Link>,
+    };
+  }
+);
 const Home = () => {
   const {
     token: { colorBgContainer },
